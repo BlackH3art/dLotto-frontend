@@ -1,3 +1,4 @@
+import Ticket from "./Ticket";
 
 
 const TicketSection = () => {
@@ -8,13 +9,7 @@ const TicketSection = () => {
 
         <div className="w-3/5 min-h-[50vh] border-2 border-blue-500 flex justify-center">
 
-          <div className="w-[500px] h-[800px] border-4 border-yellow-600">
-
-            <h1 className="text-4xl">
-              Ticket
-            </h1>
-
-          </div>
+          <Ticket />
 
         </div>
 
