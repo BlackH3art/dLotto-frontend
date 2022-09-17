@@ -38,7 +38,7 @@ const NumbersForm: FC = () => {
         </div>
       </div>
 
-      <form className="border-4 border-blue-800 w">
+      <form className="">
 
         {rangeArray.map((item, index) => (
           <NumberButton 
@@ -48,6 +48,18 @@ const NumbersForm: FC = () => {
             active={selectedNumbers.includes(item)}
           />
         ))}
+
+        <div className="flex justify-center">
+          <h2 className="py-4 text-3xl">
+            Ticket price: 1 MATIC
+          </h2>
+        </div>
+
+        <div className="flex justify-center pt-10">
+          <button className="">
+            Buy ticket
+          </button>
+        </div>
       </form>
     </>
   )
