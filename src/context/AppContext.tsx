@@ -13,6 +13,8 @@ const { ethereum } = window;
 export const AppContext = createContext<AppContextInterface>({
   connectedAccount: '',
   connectWallet: () => {},
+  signer: null,
+  contractSigner: null,
 });
 
 
@@ -49,10 +51,13 @@ interface Props {
 const AppContextProvider: FC<Props> = ({ children }) => {
 
   const contractSigner = getContractSigner();
+  const signer = getSigner();
 
   const [connectedAccount, setConnectedAcount] = useState<string>('');
 
 
+  console.log('connected --> ', connectedAccount);
+  
   const connectWallet = async () => {
     
     try {
@@ -86,7 +91,9 @@ const AppContextProvider: FC<Props> = ({ children }) => {
     <>
       <AppContext.Provider value={{
         connectedAccount,
-        connectWallet
+        connectWallet,
+        signer,
+        contractSigner,
       }}>
         {children}
       </AppContext.Provider>
