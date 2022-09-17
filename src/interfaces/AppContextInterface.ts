@@ -5,4 +5,5 @@ export interface AppContextInterface {
   connectWallet: () => void;
   signer: null | ethers.providers.JsonRpcSigner;
   contractSigner: null | ethers.Contract;
+  contractProvider: null | ethers.Contract;
 }

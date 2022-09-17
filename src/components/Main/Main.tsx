@@ -1,10 +1,29 @@
-import { FC, useState } from "react";
+import { FC, useContext, useEffect, useState } from "react";
+import { AppContext } from "../../context/AppContext";
 import LuckyNumber from "../LuckyNumber/LuckyNumber";
 
 const Main: FC = () => {
-  const [luckyNumbers, setLuckyNumbers] = useState<number[]>([
-    5, 17, 13, 22, 8, 32,
-  ]);
+
+  const { contractProvider } = useContext(AppContext);
+  const [luckyNumbers, setLuckyNumbers] = useState<number[]>([0, 0, 0, 0, 0, 0]);
+
+  const getLuckyNumberFromBlockchain = async () => {
+
+
+    setLuckyNumbers([
+      await contractProvider?.winningArray(0),
+      await contractProvider?.winningArray(1),
+      await contractProvider?.winningArray(2),
+      await contractProvider?.winningArray(3),
+      await contractProvider?.winningArray(4),
+      await contractProvider?.winningArray(5),
+    ])
+    
+  }
+
+  useEffect(() => {
+    getLuckyNumberFromBlockchain();
+  }, [])
 
   return (
     <>
