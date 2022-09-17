@@ -13,6 +13,9 @@ const { ethereum } = window;
 export const AppContext = createContext<AppContextInterface>({
   connectedAccount: '',
   connectWallet: () => {},
+  signer: null,
+  contractSigner: null,
+  contractProvider: null,
 });
 
 
@@ -41,6 +44,13 @@ const getContractSigner = () => {
   return lotteryContract;
 }
 
+const getContractProvider = () => {
+  const provider = new ethers.providers.AlchemyProvider("maticmum");
+  const lotteryContract = new ethers.Contract(contractAddress, contractABI, provider);
+
+  return lotteryContract;
+}
+
 
 interface Props {
   children: ReactNode;
@@ -49,10 +59,14 @@ interface Props {
 const AppContextProvider: FC<Props> = ({ children }) => {
 
   const contractSigner = getContractSigner();
+  const contractProvider = getContractProvider();
+  const signer = getSigner();
 
   const [connectedAccount, setConnectedAcount] = useState<string>('');
 
 
+  console.log('connected --> ', connectedAccount);
+  
   const connectWallet = async () => {
     
     try {
@@ -86,7 +100,10 @@ const AppContextProvider: FC<Props> = ({ children }) => {
     <>
       <AppContext.Provider value={{
         connectedAccount,
-        connectWallet
+        connectWallet,
+        signer,
+        contractSigner,
+        contractProvider,
       }}>
         {children}
       </AppContext.Provider>
