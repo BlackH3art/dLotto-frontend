@@ -37,7 +37,7 @@ const Navigation: FC = () => {
     <div>
       <nav className=" flex justify-center bg-zinc-900 w-full  h-20 border-indigo-500 ">
         <div className="flex items-center w-3/4 justify-between ">
-          <div className="">dLotto logo</div>
+          <div className="font-mono">dLotto logo</div>
 
           {connectedAccount ? (
             <div className="flex items-center h-12 text-white font-semibold px-7 py-2 mt-4 mr-4 xl:mr-0">
@@ -49,7 +49,7 @@ const Navigation: FC = () => {
             </div>
           ) : (
             <button
-              className=" text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 "
+              className="animate-bounce font-robotomono text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 "
               onClick={connectWallet}
             >
               Connect wallet

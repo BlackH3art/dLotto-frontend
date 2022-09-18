@@ -47,7 +47,9 @@ const NumbersForm: FC = () => {
         ))}
 
         <div className="flex justify-center">
-          <h2 className="py-4 text-3xl text-white">Ticket price: 1 MATIC</h2>
+          <h2 className="py-4 text-3xl text-white font font-robotomono">
+            Ticket price: 1 MATIC
+          </h2>
         </div>
 
         <div className="flex justify-center pt-10">
