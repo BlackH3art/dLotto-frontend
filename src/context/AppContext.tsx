@@ -1,4 +1,4 @@
-import { createContext, FC, ReactNode, useState } from 'react';
+import { createContext, FC, ReactNode, useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import { toast } from "react-toastify";
 
@@ -64,8 +64,6 @@ const AppContextProvider: FC<Props> = ({ children }) => {
 
   const [connectedAccount, setConnectedAcount] = useState<string>('');
 
-
-  console.log('connected --> ', connectedAccount);
   
   const connectWallet = async () => {
     
@@ -96,6 +94,44 @@ const AppContextProvider: FC<Props> = ({ children }) => {
     }
 
   }
+
+  ethereum?.on('accountsChanged', (accounts: string[]) => {
+    if(ethereum.isConnected()) {
+      requestAndSetConnectedAccount();
+    } else {
+      setConnectedAcount('');
+    }
+  });
+  
+  ethereum?.on('chainChanged', () => window.location.reload());
+  
+  
+  const requestAndSetConnectedAccount = async () => {
+    try {
+      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      setConnectedAcount(accounts[0]);
+    } catch (error) {
+      toast.error("You are not connected", { theme: "colored" });
+      console.warn('Not connected');   
+    }
+  }
+
+
+  useEffect(() => {
+
+    if(!ethereum) {
+      toast.error("You will need MetaMask to mint Crooked Snouts");
+      console.warn('MetaMask is not installed on this browser.');
+    } else {
+      
+      if(ethereum.isConnected()) {
+        requestAndSetConnectedAccount();
+      } 
+    }
+  }, []);
+
+
+
   return (
     <>
       <AppContext.Provider value={{
