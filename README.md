@@ -2,14 +2,14 @@
 
 
 Dapp is deployed on:\
-https://-------------.com/
+https://meek-croissant-dcf6ea.netlify.app/
 
 ![](src/images/bg-thumbnail.png "thumbnail")
 
 Application is deployed on Polygon Mumbai Testnet.
 
 Whitelist contract address:\
-https://polygonscan.com/address/0xE2047175C0F685f813938Cc8Fdc027259F0C87de
+https://mumbai.polygonscan.com/address/0xae35dbfe8f33518e83bf52fb9eda623df006a86d
 
 Smart contract repo:\
 https://github.com/BlackH3art/dLotto-smart-contract
