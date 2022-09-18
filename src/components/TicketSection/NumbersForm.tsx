@@ -41,7 +41,11 @@ const NumbersForm: FC = () => {
           { value: ethers.utils.parseEther("0.01")._hex }
         );
 
-        await txHash.wait()
+        await txHash.wait();
+
+        setSelectedNumbers([]);
+        toast.success("Ticket sent to lottery! You can buy another one", { theme: "colored" });
+
       } else {
         toast.error("You need to select 6 numbers", { theme: "colored" });
       }
