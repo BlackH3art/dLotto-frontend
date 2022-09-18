@@ -27,6 +27,19 @@
     "type": "error"
   },
   {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint8[]",
+        "name": "array",
+        "type": "uint8[]"
+      }
+    ],
+    "name": "WinningArraySet",
+    "type": "event"
+  },
+  {
     "inputs": [],
     "name": "adminFundProtocol",
     "outputs": [],
@@ -103,20 +116,6 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "checkWinners",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "distributeRewardToWinners",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -152,19 +151,6 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "number",
-        "type": "uint256"
-      }
-    ],
-    "name": "getNumber",
-    "outputs": [],
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -246,19 +232,6 @@
   {
     "inputs": [],
     "name": "resetGame",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256[]",
-        "name": "randomNumbers",
-        "type": "uint256[]"
-      }
-    ],
-    "name": "setWinningArray",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

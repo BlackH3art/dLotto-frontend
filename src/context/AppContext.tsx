@@ -120,7 +120,7 @@ const AppContextProvider: FC<Props> = ({ children }) => {
   useEffect(() => {
 
     if(!ethereum) {
-      toast.error("You will need MetaMask to mint Crooked Snouts");
+      toast.error("You will need MetaMask");
       console.warn('MetaMask is not installed on this browser.');
     } else {
       

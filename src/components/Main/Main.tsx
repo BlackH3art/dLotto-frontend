@@ -23,6 +23,17 @@ const Main: FC = () => {
     getLuckyNumberFromBlockchain();
   }, []);
 
+  contractProvider?.on("WinningArraySet", async (array) => {
+    try {
+
+      await getLuckyNumberFromBlockchain();
+
+    } catch (error) {
+      return null;
+    }
+  });
+
+
   return (
     <>
       <section className="bg-neutral-200 w-full  flex justify-center scroll-smooth hover:scroll-auto">
