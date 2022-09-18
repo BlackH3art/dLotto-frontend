@@ -8,7 +8,7 @@ https://meek-croissant-dcf6ea.netlify.app/
 
 Application is deployed on Polygon Mumbai Testnet.
 
-Whitelist contract address:\
+Lottery contract address:\
 https://mumbai.polygonscan.com/address/0xae35dbfe8f33518e83bf52fb9eda623df006a86d
 
 Smart contract repo:\
