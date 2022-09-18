@@ -31,6 +31,19 @@
     "inputs": [
       {
         "indexed": false,
+        "internalType": "uint256",
+        "name": "updatedPrizePool",
+        "type": "uint256"
+      }
+    ],
+    "name": "UpdatePrizePool",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
         "internalType": "uint8[]",
         "name": "array",
         "type": "uint8[]"

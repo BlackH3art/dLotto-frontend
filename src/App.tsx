@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation/Navigation";
 import Main from "./components/Main/Main";
 import TicketSection from "./components/TicketSection/TicketSection";
 import GameRules from "./components/GameRules/GameRules";
+import AdminPanel from './components/AdminPanel/AdminPanel';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Navigation />
       <Main />
       <TicketSection />
+      <AdminPanel />
       <GameRules />
     </>
   );

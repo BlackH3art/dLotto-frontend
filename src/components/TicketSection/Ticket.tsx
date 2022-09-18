@@ -26,6 +26,9 @@ const Ticket: FC = () => {
     getPrizePool();
   }, [])
 
+  contractProvider?.on("UpdatePrizePool", async (num) => {
+    setPrizePool(ethers.utils.formatEther(num._hex));
+  });
 
   return (
     <>
